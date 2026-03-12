@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://apples-assistance-24x7.vercel.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apple Support | Help Center</title>
+  <meta name="description" content="Get help with your Apple device. Call our toll-free support line for assistance.">
+  <style>
+    :root{
+      --bg:#f5f5f7;
+      --card:#ffffff;
+      --text:#1d1d1f;
+      --muted:#6e6e73;
+      --line:#d2d2d7;
+      --blue:#0071e3;
+      --blueDark:#005bb5;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(210,210,215,.7);
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding: 10px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:600;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .logo{
+      width:28px; height:28px; border-radius:8px;
+      display:grid; place-items:center;
+      background:#000;
+      color:#fff;
+      font-weight:700;
+      font-size:14px;
+    }
+    .nav{
+      display:flex; gap:14px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .nav a{ text-decoration:none; padding:6px 10px; border-radius:999px; }
+    .nav a:hover{ background:rgba(0,0,0,.05); color:var(--text); }
+    .cta-phone{
+      display:flex; align-items:center; gap:10px;
+    }
+    .pill{
+      display:flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(210,210,215,.9);
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      white-space:nowrap;
+      font-size:14px;
+    }
+    .pill strong{font-weight:700}
+    .callbtn{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:999px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:600;
+      font-size:14px;
+      border:1px solid rgba(0,0,0,.04);
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+    .callbtn:hover{ background:var(--blueDark); transform: translateY(-1px); }
+    .wrap{ max-width:var(--max); margin:0 auto; padding: 0 16px; }
+
+    /* hero */
+    .hero{
+      padding: 28px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      background:var(--card);
+      border:1px solid rgba(210,210,215,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      overflow:hidden;
+      position:relative;
+    }
+    .kicker{
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 6px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(26px, 3vw, 40px);
+      letter-spacing:-.02em;
+      line-height:1.12;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size: 16px;
+      max-width: 58ch;
+    }
+    .hero-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .ghost{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(210,210,215,.95);
+      font-weight:600;
+      font-size:14px;
+      color:var(--text);
+    }
+    .ghost:hover{ background:rgba(0,0,0,.03); }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(0,113,227,.08);
+      border:1px solid rgba(0,113,227,.18);
+      color:#0b3a6a;
+      font-size:13px;
+      font-weight:600;
+      margin-top: 14px;
+      width: fit-content;
+    }
+    .hero-side{
+      background: linear-gradient(180deg, #ffffff 0%, #f2f2f7 100%);
+      border:1px solid rgba(210,210,215,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .side-title{
+      margin:0;
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:-.01em;
+    }
+    .side-muted{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .big-number{
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:-.02em;
+      margin:10px 0 6px;
+      word-break:break-word;
+    }
+    .small-note{
+      font-size:12px;
+      color:var(--muted);
+      margin:0;
+    }
+
+    /* sections */
+    .section{
+      padding: 14px 0 28px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid rgba(210,210,215,.9);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+      padding:18px;
+      min-height: 130px;
+    }
+    .icon{
+      width:38px; height:38px;
+      border-radius:12px;
+      display:grid; place-items:center;
+      background:#111;
+      color:#fff;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .card h3{
+      margin:0 0 6px;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .disclaimer{
+      background: #fff;
+      border: 1px solid rgba(210,210,215,.95);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 12.5px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.05);
+    }
+    .disclaimer strong{ color: var(--text); }
+
+    /* footer */
+    footer{
+      margin-top: 26px;
+      border-top:1px solid rgba(210,210,215,.8);
+      background: rgba(255,255,255,.7);
+    }
+    .footer-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding: 18px 16px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer-links{
+      display:flex; gap:14px; flex-wrap:wrap;
+    }
+    .footer-links a{
+      color:var(--muted);
+      text-decoration:none;
+    }
+    .footer-links a:hover{ color:var(--text); text-decoration:underline; }
+
+    /* responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+      .topbar-inner{ gap:10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>Apple Support</span>
+      </div>
+
+      <nav class="nav" aria-label="Top navigation">
+        <a href="https://apples-assistance-24x7.vercel.app/#products">Products</a>
+        <a href="https://apples-assistance-24x7.vercel.app/#help">Get Help</a>
+        <a href="https://apples-assistance-24x7.vercel.app/#contact">Contact</a>
+      </nav>
+
+      <div class="cta-phone">
+        <div class="pill" aria-label="Toll-free number">
+          Toll-Free: <strong>+1 (833) 611-2328</strong>
+        </div>
+        <a class="callbtn" href="tel:+18336112328">Call Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <section class="hero-card" id="help">
+          <p class="kicker">Support Center</p>
+          <h1>Get help with your Apple device</h1>
+          <p class="sub">
+            Choose a product below or call our toll-free line for assistance with setup, troubleshooting,
+            account access, billing questions, and more.
+          </p>
+
+          <div class="hero-actions">
+            <a class="callbtn" href="tel:+18336112328">Call +1 (833) 611-2328</a>
+            <a class="ghost" href="https://apples-assistance-24x7.vercel.app/#products">Browse Topics</a>
+            <a class="ghost" href="https://apples-assistance-24x7.vercel.app/#contact">Contact Options</a>
+          </div>
+
+          <div class="badge" role="note">
+            Fast help • Friendly support • 7 days a week
+          </div>
+        </section>
+
+        <aside class="hero-side" id="contact" aria-label="Contact card">
+          <div>
+            <p class="side-title">Need immediate help?</p>
+            <p class="side-muted">Call our toll-free support number</p>
+            <div class="big-number">+1 (833) 611-2328</div>
+            <p class="small-note">Tap “Call Now” from your phone to connect instantly.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- Products -->
+  <main class="section" id="products">
+    <div class="wrap">
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="icon">iP</div>
+          <h3>iPhone</h3>
+          <p>Activation, iCloud, backup/restore, network issues, battery, and updates.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="icon">MB</div>
+          <h3>Mac</h3>
+          <p>macOS install, performance, storage, security, apps, and login support.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="icon"></div>
+          <h3>Apple ID &amp; iCloud</h3>
+          <p>Password reset, verification, account access, sync, storage, and billing.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="icon">⏱</div>
+          <h3>Apple Watch</h3>
+          <p>Pairing, fitness tracking, notifications, watchOS updates, and setup.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="icon">TV</div>
+          <h3>Apple TV</h3>
+          <p>Streaming, sign-in, buffering, AirPlay, remote, and subscription help.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="icon">♫</div>
+          <h3>Apple Services</h3>
+          <p>Music, subscriptions, refunds guidance, family sharing, and devices.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="year">2026</span> Support Center • Toll-Free: <strong>+1 (833) 611-2328</strong>
+      </div>
+      <div class="footer-links">
+        <a href="https://apples-assistance-24x7.vercel.app/#help">Help</a>
+        <a href="https://apples-assistance-24x7.vercel.app/#products">Products</a>
+        <a href="https://apples-assistance-24x7.vercel.app/#contact">Contact</a>
+        <a href="https://apples-assistance-24x7.vercel.app/#top" onclick="window.scrollTo({top:0,behavior:&#39;smooth&#39;});return false;">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+
+
+</body></html>
